@@ -1,0 +1,10 @@
+### Get district 
+GET http://localhost:8080/api/district HTTP/1.1
+
+
+### Get district by ID 
+GET http://localhost:8080/api/district/150 HTTP/1.1
+
+
+### Get district with keyword
+GET http://localhost:8080/api/district?keyword=via HTTP/1.1

@@ -1,0 +1,2 @@
+### Get Book Type 
+GET http://localhost:8080/api/bookType HTTP/1.1

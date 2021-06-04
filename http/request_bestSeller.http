@@ -1,0 +1,10 @@
+### Get Best Seller 
+GET http://localhost:8080/api/bestSeller HTTP/1.1
+
+
+### Get Best Seller by ID 
+GET http://localhost:8080/api/bestSeller/2 HTTP/1.1
+
+
+### Get Best Seller with keyword
+GET http://localhost:8080/api/bestSeller?keyword=Ar HTTP/1.1

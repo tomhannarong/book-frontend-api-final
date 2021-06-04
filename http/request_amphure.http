@@ -1,0 +1,10 @@
+### Get Amphure 
+GET http://localhost:8080/api/amphure HTTP/1.1
+
+
+### Get Amphure by ID 
+GET http://localhost:8080/api/amphure/40 HTTP/1.1
+
+
+### Get Amphure with keyword
+GET http://localhost:8080/api/amphure?keyword=Ar HTTP/1.1

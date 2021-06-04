@@ -1,0 +1,26 @@
+
+### Create ContactUs
+POST http://localhost:8080/api/contactUs HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="topic";
+
+สอบถาม
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+hannarong senachai
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="email";
+
+miss.miss2@hotmail.com
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="tel";
+
+09005023063
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="message";
+
+hello
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

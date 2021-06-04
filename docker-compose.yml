@@ -1,0 +1,74 @@
+version: '3.4'
+
+services:
+  app:
+    depends_on:
+      - db 
+      - phpmyadmin
+    image: go/api
+    deploy:
+      mode: replicated
+      replicas: 4
+      # placement:
+      #   max_replicas_per_node: 4
+    container_name: api
+    build: 
+      context: ./
+    ports: 
+      - 8080:8080 
+    restart: on-failure
+    volumes:
+      - .:/go/src/app:rw
+    networks:
+      - book_network
+
+  # mysql
+  db: 
+    image: mysql
+    container_name: db_mysql
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+    env_file:
+      - .env
+    environment: 
+      MYSQL_ROOT_HOST: "db" 
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+    ports: 
+      - 3306:3306
+    restart: always
+    volumes:
+      - database_mysql:/var/lib/mysql
+    networks: 
+      - book_network
+    
+
+  # phpmyadmin
+  phpmyadmin:
+    depends_on: 
+      - db
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_container
+    env_file:
+      - .env
+    environment: 
+      PMA_HOST: db # Note Must be the name of the what you used as the mysql service.
+      PMA_USER: "${MYSQL_USER}"
+      PMA_PORT: "${MYSQL_PORT}"
+      PMA_PASSWORD: "${MYSQL_PASSWORD}"
+    ports: 
+      - 9090:80
+    restart: always
+    networks: 
+      - book_network
+    
+
+volumes:
+  database_mysql:                  
+
+# Networks to be created to facilitate communication between containers
+networks:
+  book_network:

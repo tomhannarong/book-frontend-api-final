@@ -1,0 +1,10 @@
+### Get approve Ebook 
+GET http://localhost:8080/api/approveEbook HTTP/1.1
+
+
+### Get approve Ebook by ID 
+GET http://localhost:8080/api/approveEbook/40 HTTP/1.1
+
+
+### Get approve Ebook with keyword
+GET http://localhost:8080/api/approveEbook?keyword=Ar HTTP/1.1

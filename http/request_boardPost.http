@@ -1,0 +1,15 @@
+### Get WebBoard Post 
+GET http://localhost:8080/api/boardPost HTTP/1.1
+
+
+### Get WebBoard Post by ID 
+GET http://localhost:8080/api/boardPost/3 HTTP/1.1
+
+
+### Get WebBoard Post with keyword
+GET http://localhost:8080/api/boardPost?keyword=new HTTP/1.1
+
+
+### Get WebBoard Post with Token
+GET http://localhost:8080/api/boardPost HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTcxMjM2MjcsImlkIjoxLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.Dgfpc-mzqnh9NDkLp_G57xpT2zz9MpcayKPwNKJ66D8

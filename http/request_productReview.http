@@ -1,0 +1,10 @@
+### Get product Review 
+GET http://localhost:8080/api/product/150/product-review HTTP/1.1
+
+
+### Get product Review by ID 
+GET http://localhost:8080/api/product/150/product-review HTTP/1.1
+
+
+### Get product Review with keyword
+GET http://localhost:8080/api/product/150/product-review?keyword=Ar HTTP/1.1
